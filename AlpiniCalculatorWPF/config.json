@@ -1,0 +1,83 @@
+{
+  "Mixtures": [
+    {
+      "Name": "Intenso",
+      "Components": [
+        {
+          "Name": "Sidamo",
+          "Percentage": 50
+        },
+        {
+          "Name": "Santos",
+          "Percentage": 15
+        },
+        {
+          "Name": "Mogiana",
+          "Percentage": 25
+        },
+        {
+          "Name": "Robusta",
+          "Percentage": 10
+        }
+
+      ]
+    },
+    {
+      "Name": "Crema",
+      "Components": [
+        {
+          "Name": "Sidamo",
+          "Percentage": 50
+        },
+        {
+          "Name": "Santos",
+          "Percentage": 20
+        },
+        {
+          "Name": "Mogiana",
+          "Percentage": 20
+        },
+        {
+          "Name": "Robusta",
+          "Percentage": 10
+        }
+      ]
+    },
+    {
+      "Name": "Barista",
+      "Components": [
+        {
+          "Name": "Sidamo",
+          "Percentage": 50
+        },
+        {
+          "Name": "Santos",
+          "Percentage": 0
+        },
+        {
+          "Name": "Robusta",
+          "Percentage": 50
+        }
+      ]
+    },
+    {
+      "Name": "Brazil",
+      "Components": [
+        {
+          "Name": "Santos",
+          "Percentage": 60
+        },
+        {
+          "Name": "Mogiana",
+          "Percentage": 30
+        },
+        {
+          "Name": "Robusta",
+          "Percentage": 10
+        }
+
+      ]
+    }
+    
+  ]
+}

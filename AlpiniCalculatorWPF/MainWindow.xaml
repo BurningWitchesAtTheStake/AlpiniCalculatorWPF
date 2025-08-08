@@ -1,0 +1,146 @@
+﻿<Window x:Class="AlpiniCalculatorWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:AlpiniCalculatorWPF"
+        Style="{StaticResource MaterialDesignWindow}"
+        mc:Ignorable="d"
+        Title="Alpinico Calculator" Height="550" Width="1000"
+        ResizeMode="CanMinimize">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Height="20" Background="#090909">
+            <MenuItem Header="Справка" FontSize="10" Height="20" Background="#090909" ToolTip="О программе" Click="AboutMenuItem_Click"/>
+            <MenuItem Header="Конфигурация" FontSize="10" Height="20" Background="#090909" ToolTip="Изменение рецептов смесей" Click="ConfigMenuItem_Click"/>
+        </Menu>
+        <Grid Background="#090909">
+        <Image Source="logo.png" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="25 15"/>
+        <StackPanel Orientation="Horizontal">
+            <Border Background="#090909" Width="210" Height="400" Padding="20 20 20 0" Margin="29 0 0 0" >
+                <StackPanel>
+                    <TextBlock Text="INTENSO" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="30" FontWeight="Bold" Margin="0 0 0 0"/>
+                    <TextBox x:Name="IntensoTotalWeight" materialDesign:HintAssist.Hint="Введите число" KeyDown="Intenso_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10"/>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сидамо" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="IntensoSidamo" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сантос" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="IntensoSantos" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Можиана" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="IntensoMogiana" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Робуста" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="IntensoRobusta" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                        <Line X1="0" Y1="0" X2="210" Y2="0" Stroke="#C6C6C6" StrokeThickness="2" Margin="0 5"/>
+                        <TextBox Margin="0 7.5" Width="170" HorizontalAlignment="Left" x:Name="IntensoDivide" materialDesign:HintAssist.Hint="Число деления" KeyDown="Intenso_Divide_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBlock x:Name="IntensoX" Margin="0 7.5" FontSize="20" Text="" Foreground="#677953"/>
+                        <!--Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="½ часть"  ToolTip="Разделить текущий результат на 2" FontSize="15" Margin="0 0 0 0" Click="Intenso_2x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                            <TextBlock x:Name="IntensoX" HorizontalAlignment="Right" FontSize="20" Text="" Foreground="#677953"/>
+                        </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="⅓ часть" ToolTip="Разделить текущий результат на 3" FontSize="15" Margin="0 0 0 0" Click="Intenso_3x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    </Grid-->
+                </StackPanel>
+            </Border>
+            <Border Background="#090909" Width="210" Height="400" Padding="20 20 20 0" Margin="29 0 0 0" >
+                <StackPanel>
+                    <TextBlock Text="CREMA" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="30" FontWeight="Bold" Margin="0 0 0 0"/>
+                    <TextBox x:Name="CremaTotalWeight" materialDesign:HintAssist.Hint="Введите число" KeyDown="Crema_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10"/>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сидамо" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="CremaSidamo" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сантос" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="CremaSantos" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Можиана" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="CremaMogiana" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Робуста" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="CremaRobusta" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Line X1="0" Y1="0" X2="210" Y2="0" Stroke="#C6C6C6" StrokeThickness="2" Margin="0 5"/>
+                        <TextBox Margin="0 7.5" Width="170" HorizontalAlignment="Left" x:Name="CremaDivide" materialDesign:HintAssist.Hint="Число деления" KeyDown="Crema_Divide_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBlock x:Name="CremaX" Margin="0 7.5" FontSize="20" Text="" Foreground="#677953"/>
+                        <!--Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="½ часть"  ToolTip="Разделить текущий результат на 2" FontSize="15" Margin="0 0 0 0" Click="Crema_2x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                            <TextBlock x:Name="CremaX" HorizontalAlignment="Right" FontSize="20" Text="" Foreground="#677953"/>
+                        </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="⅓ часть" ToolTip="Разделить текущий результат на 3" FontSize="15" Margin="0 0 0 0" Click="Crema_3x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    </Grid-->
+                </StackPanel>
+            </Border>
+            <Border Background="#090909" Width="210" Height="400" Padding="20 20 20 0" Margin="29 0 0 0" >
+                <StackPanel>
+                    <TextBlock Text="BARISTA" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="30" FontWeight="Bold" Margin="0 0 0 0"/>
+                    <TextBox x:Name="BaristaTotalWeight" materialDesign:HintAssist.Hint="Введите число" KeyDown="Barista_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10"/>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сидамо" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="BaristaSidamo" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сантос" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="BaristaSantos" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                        <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Робуста" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="BaristaRobusta" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                        <Line X1="0" Y1="0" X2="210" Y2="0" Stroke="#C6C6C6" StrokeThickness="2" Margin="0 49.5 0 5"/>
+                        <TextBox Margin="0 7.5" Width="170" HorizontalAlignment="Left" x:Name="BaristaDivide" materialDesign:HintAssist.Hint="Число деления" KeyDown="Barista_Divide_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBlock x:Name="BaristaX" Margin="0 7.5" FontSize="20" Text="" Foreground="#677953"/>
+                        <!--Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="½ часть"  ToolTip="Разделить текущий результат на 2" FontSize="15" Margin="0 0 0 0" Click="Barista_2x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                            <TextBlock x:Name="BaristaX" HorizontalAlignment="Right" FontSize="20" Text="" Foreground="#677953"/>
+                        </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="⅓ часть" ToolTip="Разделить текущий результат на 3" FontSize="15" Margin="0 0 0 0" Click="Barista_3x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    </Grid-->
+                </StackPanel>
+            </Border>
+            <Border Background="#090909" Width="210" Height="400" Padding="20 20 20 0" Margin="29 0 0 0" >
+                <StackPanel>
+                    <TextBlock Text="BRAZIL" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="30" FontWeight="Bold" Margin="0 0 0 0"/>
+                    <TextBox x:Name="BrazilTotalWeight" materialDesign:HintAssist.Hint="Введите число" KeyDown="Brazil_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 10"/>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Сантос" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="BrazilSantos" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Можиана" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="BrazilMogiana" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                        <TextBlock HorizontalAlignment="Left" Text="Робуста" Foreground="#677953" FontFamily="Verdana" FontSize="20"/>
+                        <TextBlock x:Name="BrazilRobusta" HorizontalAlignment="Right" Text="" Foreground="#C6C6C6" FontFamily="Verdana" FontSize="15" Margin="0 5 0 0"/>
+                    </Grid>
+                    <Line X1="0" Y1="0" X2="210" Y2="0" Stroke="#C6C6C6" StrokeThickness="2" Margin="0 50 0 5"/>
+                        <TextBox Margin="0 7.5" Width="170" HorizontalAlignment="Left" x:Name="BrazilDivide" materialDesign:HintAssist.Hint="Число деления" KeyDown="Brazil_Divide_Input" Foreground="#C6C6C6" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBlock x:Name="BrazilX" Margin="0 7.5" FontSize="20" Text="" Foreground="#677953"/>
+                        <!--Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="½ часть"  ToolTip="Разделить текущий результат на 2" FontSize="15" Margin="0 0 0 0" Click="Brazil_2x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                            <TextBlock x:Name="BrazilX" HorizontalAlignment="Right" FontSize="20" Text="" Foreground="#677953"/>
+                        </Grid>
+                    <Grid Height="30" Margin="0 7.5">
+                            <Button HorizontalAlignment="Left" Content="⅓ часть" ToolTip="Разделить текущий результат на 3" FontSize="15" Margin="0 0 0 0" Click="Brazil_3x_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    </Grid-->
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Margin="20">
+                <Button Content="Печать" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="PrintButton_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+        </StackPanel>
+    </Grid>
+  </DockPanel>
+</Window>
